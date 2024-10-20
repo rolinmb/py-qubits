@@ -5,4 +5,7 @@ The main idea behind this was seeding the random right before every "observation
 NO REQUIREMENTS! Run src/main.py from root:
     -> python src/main.py
 
-If you run the program as it currently is, it will simulate N_ITERS unique 50%/50% event and a 66.66%/33.33% outcome events. (aka every time you run it; because of how random is always re-seeded; there will be a new number of zeros and ones in each simulation)i
+If you run the program as it currently is, it will simulate N_ITERS unique 50%/50% event and a 66.66%/33.33% outcome events. (aka every time you run it; because of how random is always re-seeded; there will be a new number of zeros and ones in each simulation)
+
+TODO:
+    -> Try and implement simple Quantum Register; i.e. simulate how two qubits could be entangled and thus be collapsed into 4 possible observed outcome states, some of which may not be observable given how the qubits are entangled to make a register. My understanding breaks down here.
