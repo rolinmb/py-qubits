@@ -38,7 +38,7 @@ The qubit is in a superposition of beind measured as 0 or 1 before the measureme
 I know it sounds redundand but that is the fundamental assumption of quantum mechanics.
 You can simulate binary event outcomes quite well with a single qubit given you know the
 Probability of each outcome in such binary event. There are also models of higher order quantum
-logits lik Qutrits (think of Qutrits to Qubits as ternary is to binary)
+logits like Qutrits (think of Qutrits to Qubits as ternary is to binary)
 """
 N_ITERS = 10000
 
@@ -54,7 +54,7 @@ if __name__ == "__main__":
         else:
             nOnes += 1
     print(f"50/50 Test Result ({N_ITERS} iters) :: {nZeros} 0's  {nOnes} 1's")
-    
+
     # 2/3 (66.66%) chance of measuring Zero vs 1/3 (33.33%) chance of One
     q = singleton_qubit(complex(-2/math.sqrt(6), 0), complex(0, math.sqrt(1)/math.sqrt(3)))
     nZeros = 0
