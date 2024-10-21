@@ -8,4 +8,6 @@ NO REQUIREMENTS! Run src/main.py from root:
 If you run the program as it currently is, it will simulate N_ITERS unique 50%/50% event and a 66.66%/33.33% outcome events. (aka every time you run it; because of how random is always re-seeded; there will be a new number of zeros and ones in each simulation)
 
 TODO:
-    -> Try and implement simple Quantum Register; i.e. simulate how two qubits could be entangled and thus be collapsed into 4 possible observed outcome states, some of which may not be observable given how the qubits are entangled to make a register. My understanding breaks down here.
+    -> Abstract Qubit and Qutrit to an n-outcome Quantum logit / event; where the sum of probabiltities of each N outcome states still sums to 1 as defined in a Qubit and Qutrit
+
+    -> Try and implement simple Quantum Register with qubits; i.e. simulate how two qubits could be entangled and thus be collapsed into 4 possible observed outcome states, some of which may not be observable given how the qubits are entangled to make a register. My understanding breaks down here. A quantum register cannot consist of singleton qubits as the regiser's sum of probabilties must equal 1; not the individual qubit or qutrit or n-outcome quantum logic unit encodes.
