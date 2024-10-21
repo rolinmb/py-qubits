@@ -3,6 +3,7 @@ import cmath
 import os
 # Don't ask me about this random function, I found it on Stack Overflow years ago
 # Returns a float (or a double?) in the inclusive range [0, 1]
+# while also re-seeding the python system random every time its called
 def get_true_pyrand():
     return int.from_bytes(os.urandom(8), byteorder="big") / ((1 << 64) - 1)
 
@@ -83,7 +84,7 @@ if __name__ == "__main__":
     qb = singleton_qubit(complex(-1/math.sqrt(2), 0), complex(0, 1/math.sqrt(2))) # coinflip scenario
     nZeros = 0
     nOnes = 0
-    for i in range(0, N_ITERS): # Simulate 50/50 events
+    for i in range(0, N_ITERS):
         measurement = qb.measure()
         #print(f"50/50 Measurement Iteration {i} :: {measurement}")
         if measurement == 0:
@@ -96,7 +97,7 @@ if __name__ == "__main__":
     qb = singleton_qubit(complex(-2/math.sqrt(6), 0), complex(0, math.sqrt(1)/math.sqrt(3)))
     nZeros = 0
     nOnes = 0
-    for i in range(0, N_ITERS): # Simulate 66.66% vs 33.335% events
+    for i in range(0, N_ITERS):
         measurement = qb.measure()
         #print(f"66.66% vs 33.335% Measurement Iteration {i} :: {measurement}")
         if measurement == 0:
@@ -105,13 +106,14 @@ if __name__ == "__main__":
             nOnes += 1
     print(f"66.66% vs 33.335% Test Result ({N_ITERS} iters) :: {nZeros} 0's {nOnes} 1's")
 
-    # Example qutrit in a "coinflip" scenario (equal chance for 0, 1, and 2)
+    # Qutrit example of 3 equal probability events (33.33%/33.33%/33.33%)
     qt = singleton_qutrit(complex(1/math.sqrt(3), 0), complex(1/math.sqrt(3), 0), complex(1/math.sqrt(3), 0))
     nZeros = 0
     nOnes = 0
     nTwos = 0
     for i in range(N_ITERS):
         measurement = qt.measure()
+        #print(f"33.33% vs 33.33% vs 33.33% Measurement Iteration {i} :: {measurement}")
         if measurement == 0:
             nZeros += 1
         elif measurement == 1:
@@ -127,6 +129,7 @@ if __name__ == "__main__":
     nTwos = 0
     for i in range(N_ITERS):
         measurement = qt.measure()
+        #print(f"60% vs 30% vs 10% Measurement Iteration {i} :: {measurement}")
         if measurement == 0:
             nZeros += 1
         elif measurement == 1:
